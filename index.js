@@ -1,10 +1,9 @@
 // Grab value of input.
 var password = $("#password")
-var progressBar = $("#progress-bar")
+var progressBar = $("#progress-bar").popover()
 
 // Grab progress bar by ID to manipulate later.
 var progressTag = document.getElementById("progress-bar")
-
 
 // Array of every password requirement in Regex form.
 const requirementArr = [
@@ -13,6 +12,7 @@ const requirementArr = [
     "([0-9])",
     '[!@#$&()\\-`.+,/\"]'
 ]
+
 
 // Run when page loads.
 $(document).ready(() => {
@@ -67,40 +67,3 @@ $(document).ready(() => {
     })
     
 })
-
-
-/*
-
-if(passwordReq.upper.test(val)) {
-                    progressBarScore += 20
-                    progressBar.attr({
-                        "style": `width: ${progressBarScore}%`,
-                        "aria-valuenow": `${progressBarScore}`
-                    })
-                }
-
-                if(passwordReq.lower.test(val)) {
-                    progressBarScore += 20
-                    progressBar.attr({
-                        "style": `width: ${progressBarScore}%`,
-                        "aria-valuenow": `${progressBarScore}`
-                    })
-                }
-
-                if(passwordReq.num.test(val)) {
-                    progressBarScore += 20
-                    progressBar.attr({
-                        "style": `width: ${progressBarScore}%`,
-                        "aria-valuenow": `${progressBarScore}`
-                    })
-                }
-
-                if(passwordReq.symbol.test(val)) {
-                    progressBarScore += 20
-                    progressBar.attr({
-                        "style": `width: ${progressBarScore}%`,
-                        "aria-valuenow": `${progressBarScore}`
-                    })
-                }
-
-*/
