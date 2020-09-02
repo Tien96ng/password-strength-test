@@ -6,3 +6,8 @@ form {
 input {
     width: 100%;
 }
+
+.progress {
+    width: 50%;
+    margin: 0 auto;
+}
