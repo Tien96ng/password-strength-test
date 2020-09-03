@@ -28,10 +28,12 @@ $(document).ready(() => {
             // Variable to determine color via class string in bootstrap.
             var color = ""
 
+            var incrementPercent = 20
+
             // Created a local function to reduce lines of code and repetition.
-            function updateProgress() {
+            function updateProgress(inc) {
                 // Updates the bar by 20% because there are 5 total requirements.
-                progressBarScore += 20
+                progressBarScore += inc
                 // Updates the bootstrap progress bar depending on which requirements have been met.
 
                 // Condition to set color according to %.
@@ -57,19 +59,13 @@ $(document).ready(() => {
 
             // First condition of 8 or more characters,
             if(val.length >= 8) {
-                updateProgress()
+                updateProgress(20)
                 // Maps through each index in the requirement array.
                 // Used ternary operator to determine if there is a match with a requirement, if so run the updateProgress function.
-                jQuery.map(requirementArr, (regexp) => val.match(regexp) && updateProgress())
+                jQuery.map(requirementArr, (regexp) => val.match(regexp) && updateProgress(20))
             } else {
                 // Condition when the value is less than 8 - can handle when input gets deleted.
-                progressBar.attr({
-                    "style": `width: ${progressBarScore}%`,
-                    "aria-valuenow": `${progressBarScore}`,
-                    "class" : `progress-bar progress-bar-striped ${color}`
-
-                })
-                progressTag.innerHTML = ""
+                updateProgress(0)
             }
 
         })
