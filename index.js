@@ -61,6 +61,15 @@ $(document).ready(() => {
                 // Maps through each index in the requirement array.
                 // Used ternary operator to determine if there is a match with a requirement, if so run the updateProgress function.
                 jQuery.map(requirementArr, (regexp) => val.match(regexp) && updateProgress())
+            } else {
+                // Condition when the value is less than 8 - can handle when input gets deleted.
+                progressBar.attr({
+                    "style": `width: ${progressBarScore}%`,
+                    "aria-valuenow": `${progressBarScore}`,
+                    "class" : `progress-bar progress-bar-striped ${color}`
+
+                })
+                progressTag.innerHTML = ""
             }
 
         })
