@@ -11,3 +11,5 @@
  * HTML
  * CSS (BootStrap 4)
  * JavaScript (jQuery)
+ 
+ Live Demo, (Click Here!)[https://github.com/Tien96ng/password-strength-test]
